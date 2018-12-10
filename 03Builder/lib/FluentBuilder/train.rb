@@ -5,7 +5,7 @@ class Train
   def initialize(type)
     @@trainType = type
   end
-  
+
   def []=(*args)
     @@parts[args[0]] = args[1]
   end

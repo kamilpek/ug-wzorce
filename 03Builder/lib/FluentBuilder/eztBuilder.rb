@@ -23,11 +23,7 @@ class EztBuilder < TrainBuilder
     @@ezt["wifi"] = "TAK"
   end
 
-  def build
-    self.buildModel
-    self.buildEngine
-    self.buildSeats
-    self.buildWifi
+  def show
     @@ezt.show
   end
 end

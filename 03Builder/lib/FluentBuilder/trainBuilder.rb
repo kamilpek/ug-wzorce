@@ -14,4 +14,8 @@ class TrainBuilder
   def buildWifi
     raise NotImplementedError
   end
+
+  def show
+    raise NotImplementedError
+  end
 end

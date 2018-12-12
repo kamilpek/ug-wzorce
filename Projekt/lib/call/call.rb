@@ -1,4 +1,5 @@
 class Call
+  attr_accessor :direction, :caller, :recipient
   @@parameters = Hash.new
 
   def []=(*args)
@@ -7,9 +8,9 @@ class Call
 
   def prepare(pbx)
     puts("\n")
-    puts("--- Uruchamianie połączenia: #{@@parameters["direction"]} ---")
+    puts("--- Uruchamianie połączenia: #{direction} ---")
     puts("--- Centrala obsługująca połączenie: #{pbx.getModel} ---")
-    puts("--- Abonent: #{@@parameters["caller"]} --- Numer wywoływany: #{@@parameters["recipient"]} ---")
+    puts("--- Abonent: #{caller} --- Numer wywoływany: #{recipient} ---")
   end
 
   def calling

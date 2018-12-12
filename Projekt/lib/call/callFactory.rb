@@ -1,20 +1,19 @@
 require_relative 'call'
 class CallFactory
-  def make_call(type)
+  def make_call(type, caller, recipient)
     case type
-    when 'internal' then InternalCall.new
-    when 'outgoing' then OutgoingCall.new
-    when 'incoming' then IncomingCall.new
+    when 'internal' then InternalCall.new("WEWNĘTRZNE", caller, recipient)
+    when 'outgoing' then OutgoingCall.new("WYCHODZĄCE", caller, recipient)
+    when 'incoming' then IncomingCall.new("PRZYCHODZĄCE", caller, recipient)
     end
   end
 end
 
 class InternalCall < Call
-  def initialize
-    @@parameters["direction"] = "WEWNĘTRZNE"
-    @@parameters["caller"] = "2100"
-    @@parameters["recipient"] = "2266"
-    @@parameters
+  def initialize(type, caller, recipient)
+    self.direction = type
+    self.caller = caller
+    self.recipient = recipient
   end
 
   def calling
@@ -25,20 +24,18 @@ class InternalCall < Call
 end
 
 class OutgoingCall < Call
-  def initialize
-    @@parameters["direction"] = "WYCHODZĄCE"
-    @@parameters["caller"] = "585232100"
-    @@parameters["recipient"] = "501200123"
-    @@parameters
+  def initialize(type, caller, recipient)
+    self.direction = type
+    self.caller = caller
+    self.recipient = recipient
   end
 end
 
 class IncomingCall < Call
-  def initialize
-    @@parameters["direction"] = "PRZYCHODZĄCE"
-    @@parameters["recipient"] = "585232100"
-    @@parameters["caller"] = "501200123"
-    @@parameters
+  def initialize(type, caller, recipient)
+    self.direction = type
+    self.caller = caller
+    self.recipient = recipient
   end
 
   def calling

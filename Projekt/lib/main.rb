@@ -10,14 +10,20 @@ class Main
     # połączenia
     callFactory = CallFactory.new
     # przychodzące
-    incCall = callFactory.make_call("incoming")
+    incCall = callFactory.make_call("incoming", "501200123", "585232100")
     incCall.prepare(alcatelOmni)
     incCall.calling
     # wychodzące na numery premium
-    outPremiumCall = callFactory.make_call("outgoing")
+    outPremiumCall = callFactory.make_call("outgoing", "585232100", "501200123")
     outPremiumCall.prepare(alcatel4400)
     premiumCall = PremiumCall.new(outPremiumCall)
     premiumCall.calling
+    # wychodzące za granicę
+    outForeignCall = callFactory.make_call("outgoing", "585232100", "0074952311500")
+    outForeignCall.prepare(alcatel4400)
+    foreignCall = ForeignCall.new(outForeignCall)
+    foreignCall.zvonit
+    # foreignAdapter
   end
 end
 

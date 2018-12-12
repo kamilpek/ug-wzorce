@@ -22,7 +22,7 @@
 ### Zadanie
 Do każdego z punktów należy zaprezentować i użyć po dwa różne wzorce:
 1. wytwarzania obiektów – konstrukcyjne (budowniczy [x], fabryki [x]),
-1. organizowania ich w użyteczne struktury obiektów – strukturalne (dekorator [x], adapter),
+1. organizowania ich w użyteczne struktury obiektów – strukturalne (dekorator [x], adapter [x]),
 1. modelowania zachowania obiektów/(struktur obiektów) – czynnościowe (obserwator, iterator).
 
 

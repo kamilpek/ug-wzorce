@@ -16,13 +16,13 @@ class Main
     incCall.calling
     incCall.attachObserver(billingObserver)
     incCall.notifyObserver
-    # wychodzące na numery premium
-    outPremiumCall = callFactory.make_call("outgoing", "585232100", "501200123")
-    outPremiumCall.prepare(alcatel4400)
-    premiumCall = PremiumCall.new(outPremiumCall)
-    premiumCall.calling
-    outPremiumCall.attachObserver(billingObserver)
-    outPremiumCall.notifyObserver
+    # # wychodzące na numery premium
+    # outPremiumCall = callFactory.make_call("outgoing", "585232100", "501200123")
+    # outPremiumCall.prepare(alcatel4400)
+    # premiumCall = PremiumCall.new(outPremiumCall)
+    # premiumCall.calling
+    # outPremiumCall.attachObserver(billingObserver)
+    # outPremiumCall.notifyObserver
     # wychodzące za granicę
     outForeignCall = callFactory.make_call("outgoing", "585232100", "0074952311500")
     outForeignCall.prepare(alcatel4400)
@@ -31,6 +31,12 @@ class Main
     foreignCall.zvonit
     outForeignCall.attachObserver(billingObserver)
     outForeignCall.notifyObserver
+    # połączenie serwisowe
+    serviceFactory = ServiceFactory.new
+    serviceConn = serviceFactory.maintain("ssh")
+    serviceConn.prepare(alcatel4400)
+    addSubscriber = AddSubscriber.new(serviceConn, "2021")
+    addSubscriber.execute
   end
 end
 

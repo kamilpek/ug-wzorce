@@ -3,7 +3,7 @@
 ## Przestrzeń wzorców projektowych (przykłady)
 1. Konstrukcyjne
     1. singleton
-    1. fabryka abstrakcyjna
+    1. fabryka
     1. budowniczy
     1. prototyp
 1. Strukturalne
@@ -12,7 +12,7 @@
     1. fasada
     1. most
 1. Operacyjne (czynnościowe)
-    1. iterator    
+    1. polecenie
     1. mediator
     1. obserwator
     1. odwiedzający
@@ -23,7 +23,7 @@
 Do każdego z punktów należy zaprezentować i użyć po dwa różne wzorce:
 1. wytwarzania obiektów – konstrukcyjne (budowniczy [x], fabryki [x]),
 1. organizowania ich w użyteczne struktury obiektów – strukturalne (dekorator [x], adapter [x]),
-1. modelowania zachowania obiektów/(struktur obiektów) – czynnościowe (obserwator, iterator).
+1. modelowania zachowania obiektów/(struktur obiektów) – czynnościowe (obserwator [x], polecenie [x]).
 
 
 ### Plan pracy – Centrala telefoniczna
@@ -36,4 +36,4 @@ Do każdego z punktów należy zaprezentować i użyć po dwa różne wzorce:
     1. Połączenie wychodzące - produkowane przez fabrykę
     1. Połączenia premium - dekorowane połączenia wychodzące
 1. Bilinigi i statystyki - (obserwator)
-1. Połączenie serwisowe
+1. Połączenie serwisowe - (polecenie)

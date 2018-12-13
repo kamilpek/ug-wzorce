@@ -1,6 +1,5 @@
 class Call
-  attr_accessor :direction, :caller, :recipient, :cost
-  @@parameters = Hash.new
+  attr_accessor :direction, :caller, :recipient, :cost  
 
   def prepare(pbx)
     @observers = []

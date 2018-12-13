@@ -14,6 +14,7 @@ class InternalCall < Call
     self.direction = type
     self.caller = caller
     self.recipient = recipient
+    self.cost = 0
   end
 
   def calling
@@ -28,6 +29,7 @@ class OutgoingCall < Call
     self.direction = type
     self.caller = caller
     self.recipient = recipient
+    self.cost = 5
   end
 end
 
@@ -36,6 +38,7 @@ class IncomingCall < Call
     self.direction = type
     self.caller = caller
     self.recipient = recipient
+    self.cost = 0
   end
 
   def calling

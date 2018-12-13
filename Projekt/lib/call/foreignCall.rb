@@ -4,6 +4,7 @@ class ForeignCall
   end
 
   def zvonit
+    puts("--- POŁĄCZENIE ZAGRANICZNE ---")
     @adapter.calling
   end
 end

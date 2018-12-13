@@ -3,12 +3,13 @@ class PremiumCall
     @call = call
   end
 
-  def cost
-    @call["cost"] = @call["cost"] + 10
+  def increaseCost
+    @call.cost = @call.cost + 10
   end
 
   def calling
-    puts "--- POŁĄCZENIE PREMIUM ---"
+    self.increaseCost
+    puts("--- POŁĄCZENIE PREMIUM ---")
     @call.calling
   end
 end

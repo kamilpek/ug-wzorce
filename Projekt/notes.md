@@ -35,5 +35,5 @@ Do każdego z punktów należy zaprezentować i użyć po dwa różne wzorce:
     1. Połączenia przychodzące - produkowane przez fabrykę i obsługiwane przez obserwator
     1. Połączenie wychodzące - produkowane przez fabrykę
     1. Połączenia premium - dekorowane połączenia wychodzące
-1. Bilinigi i statystyki - iterator
+1. Bilinigi i statystyki - (obserwator)
 1. Połączenie serwisowe

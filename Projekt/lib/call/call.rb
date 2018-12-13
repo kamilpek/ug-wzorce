@@ -1,12 +1,9 @@
 class Call
-  attr_accessor :direction, :caller, :recipient
+  attr_accessor :direction, :caller, :recipient, :cost
   @@parameters = Hash.new
 
-  def []=(*args)
-    @@parameters[args[0]] = args[1]
-  end
-
   def prepare(pbx)
+    @observers = []
     puts("\n")
     puts("--- Uruchamianie połączenia: #{direction} ---")
     puts("--- Centrala obsługująca połączenie: #{pbx.getModel} ---")
@@ -52,5 +49,18 @@ class Call
 
   def ending
     puts("[R] clank")
+    puts "--- Koszt połączenia wyniósł: #{cost} ---"
+  end
+
+  def attachObserver(observer)
+    @observers.push observer
+  end
+
+  def detachObserver(observer)
+    @observers.remove observer
+  end
+
+  def notifyObserver
+    @observers.each { |observer| observer.update(self, direction) }
   end
 end
